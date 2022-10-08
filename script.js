@@ -5,15 +5,11 @@ var tiles = L.esri.basemapLayer("Streets").addTo(map);
 var markers = [];
 
 function distance(lat1, lat2, lon1, lon2) {
-  // The math module contains a function
-  // named toRadians which converts from
-  // degrees to radians.
   lon1 = lon1 * Math.PI / 180;
   lon2 = lon2 * Math.PI / 180;
   lat1 = lat1 * Math.PI / 180;
   lat2 = lat2 * Math.PI / 180;
 
-  // Haversine formula
   let dlon = lon2 - lon1;
   let dlat = lat2 - lat1;
   let a = Math.pow(Math.sin(dlat / 2), 2)
@@ -21,12 +17,8 @@ function distance(lat1, lat2, lon1, lon2) {
     * Math.pow(Math.sin(dlon / 2), 2);
 
   let c = 2 * Math.asin(Math.sqrt(a));
-
-  // Radius of earth in kilometers. Use 3956
-  // for miles
   let r = 6371;
 
-  // calculate the result
   return (c * r);
 }
 
@@ -37,14 +29,8 @@ function createMarker(latitude, longitude) {
 function createHardMarker(latitude, longitude) {
   var centerIcon = L.icon({
     iconUrl: './assets/marker.png',
-
     iconSize: [34, 34],
-    // size of the icon
-    //shadowSize:   [50, 64], // size of the shadow
     iconAnchor: [16, 34],
-    // point of the icon which will correspond to marker's location
-    //shadowAnchor: [4, 62],  // the same for the shadow
-    // popupAnchor: [-35, -35]
   });
   L.marker([latitude, longitude], { icon: centerIcon }).addTo(map);
 }
@@ -53,18 +39,10 @@ function verifica(circleLat, circleLng, circleRad) {
   console.log(data);
 
   data.map(index => {
-    // index.address.lat;
     let distancia = distance(index.address.lat, circleLat, index.address.lng, circleLng) * 300;
-    console.log(distancia);
-    console.log(circleRad);
 
     if (distancia < circleRad) {
-      console.log("dentro");
       createHardMarker(index.address.lat, index.address.lng);
-
-    }
-    else {
-      console.log("fora");
     }
   })
 }
@@ -74,7 +52,6 @@ function atualiza() {
     createMarker(marker.lat, marker.lng);
     console.log(`lat: ${marker.lat}, lng: ${marker.lng}`);
   })
-
 
   if (markers[1]) {
     let centerlat = (markers[0].lat + markers[1].lat) / 2;
@@ -95,16 +72,13 @@ function atualiza() {
 var searchControl = L.esri.Geocoding.geosearch({
   providers: [
     L.esri.Geocoding.arcgisOnlineProvider({
-      // API Key to be passed to the ArcGIS Online Geocoding Service
-      apikey: 'AAPKa226ff8bde974bad99f9582492514832sflZk2AdxoKznBIyhiskwB2wqy7Zx-rJEF_ujnGePGNKLXsGXkhufkjikP8bDIlX'
+      apikey: process.env.API_KEY
     })
   ]
 }).addTo(map);
 
-// create an empty layer group to store the results and add it to the map
 var results = L.layerGroup().addTo(map);
 
-// listen for the results event and add every result to the map
 searchControl.on("results", function (data) {
   results.clearLayers();
   for (var i = data.results.length - 1; i >= 0; i--) {
