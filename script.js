@@ -1,4 +1,5 @@
 import { data } from "./api.js";
+import 'dotenv/config';
 
 var map = L.map("map").setView([0, 0], 3);
 var tiles = L.esri.basemapLayer("Streets").addTo(map);
@@ -72,10 +73,12 @@ function atualiza() {
 var searchControl = L.esri.Geocoding.geosearch({
   providers: [
     L.esri.Geocoding.arcgisOnlineProvider({
-      apikey: process.env.API_KEY
+      apikey: 'AAPKa226ff8bde974bad99f9582492514832sflZk2AdxoKznBIyhiskwB2wqy7Zx-rJEF_ujnGePGNKLXsGXkhufkjikP8bDIlX'
     })
   ]
 }).addTo(map);
+require('dotenv').config();
+console.log(process.env.API_KEY)
 
 var results = L.layerGroup().addTo(map);
 
