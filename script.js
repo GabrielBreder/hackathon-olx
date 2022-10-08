@@ -1,5 +1,4 @@
 import { data } from "./api.js";
-import 'dotenv/config';
 
 var map = L.map("map").setView([0, 0], 3);
 var tiles = L.esri.basemapLayer("Streets").addTo(map);
