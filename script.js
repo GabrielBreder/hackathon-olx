@@ -76,8 +76,6 @@ var searchControl = L.esri.Geocoding.geosearch({
     })
   ]
 }).addTo(map);
-require('dotenv').config();
-console.log(process.env.API_KEY)
 
 var results = L.layerGroup().addTo(map);
 
