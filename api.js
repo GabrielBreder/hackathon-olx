@@ -11,8 +11,8 @@ export const data = [
     "name": "Gragoatá",
     "address": {
       "description": "rua alcides galhardo, 85",
-      "lat": -22.902859999999976,
-      "lng": -43.135699999999986
+      "lat": -22.90439494555089,
+      "lng": -43.13006992597602
     }
   },
   {
@@ -35,8 +35,8 @@ export const data = [
     "name": "Ilha do Fundão",
     "address": {
       "description": "avenida das cores, 256",
-      "lat": -22.86686999999995,
-      "lng": -43.220159999999964
+      "lat": -22.90182995745066,
+      "lng": -43.12631491717245
     }
   }
 ]

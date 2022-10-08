@@ -6,20 +6,22 @@ html {
   padding: 0;
 }
 
+/* 
 section {
   width: 100vw;
   display: grid;
   grid-template-columns: 5fr 1fr;
-}
+} */
 
 #map {
   height: 100vh;
 }
 
+/* 
 .sidebar {
   background-color: #fff;
   padding-left: 1rem;
-}
+} */
 
 .add-marker {
   display: flex;
@@ -27,9 +29,10 @@ section {
   justify-content: space-around;
 }
 
+/* 
 .search {
   text-align: center;
-}
+} */
 
 #mapSearchContainer {
   position: fixed;

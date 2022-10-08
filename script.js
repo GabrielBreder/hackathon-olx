@@ -33,17 +33,20 @@ function distance(lat1, lat2, lon1, lon2) {
 function createMarker(latitude, longitude) {
   L.marker([latitude, longitude]).addTo(map);
 }
+
 function createHardMarker(latitude, longitude) {
   var centerIcon = L.icon({
     iconUrl: './assets/marker.png',
 
-    iconSize: [38, 95], // size of the icon
+    iconSize: [34, 34],
+    // size of the icon
     //shadowSize:   [50, 64], // size of the shadow
-    iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+    iconAnchor: [16, 34],
+    // point of the icon which will correspond to marker's location
     //shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor: [-3, -76]
+    // popupAnchor: [-35, -35]
   });
-  L.marker([latitude, longitude], { icon: cent }).addTo(map);
+  L.marker([latitude, longitude], { icon: centerIcon }).addTo(map);
 }
 
 function verifica(circleLat, circleLng, circleRad) {
@@ -57,8 +60,8 @@ function verifica(circleLat, circleLng, circleRad) {
 
     if (distancia < circleRad) {
       console.log("dentro");
-      if (distancia < circleRad / 50)
-        createMarker(index.address.lat, index.address.lng);
+      createHardMarker(index.address.lat, index.address.lng);
+
     }
     else {
       console.log("fora");
@@ -85,15 +88,8 @@ function atualiza() {
       fillOpacity: 0.5,
       radius: raio * 2,
     }).addTo(map);
-    var circleHard = L.circle([centerlat, centerlng], {
-      color: 'blue',
-      fillColor: '#f03',
-      fillOpacity: 0.5,
-      radius: raio / 50,
-    }).addTo(map);
   }
 }
-
 
 // create the geocoding control and add it to the map
 var searchControl = L.esri.Geocoding.geosearch({
