@@ -7,7 +7,27 @@ html {
 }
 
 #map {
-  height: 100vh;
+  height: 500px;
+}
+
+.search-btn img {
+  height: 15px;
+}
+
+#search-items .list-group-item:hover {
+  background-color: #166a91;
+  cursor: pointer;
+}
+
+.list-group-item.selected-locations {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.finish-section {
+  margin: 1rem 0;
+  text-align: center;
 }
 
 .add-marker {

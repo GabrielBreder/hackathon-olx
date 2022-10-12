@@ -15,19 +15,31 @@
     <!-- Load Esri Leaflet from CDN -->
     <script src="https://unpkg.com/esri-leaflet"></script>
 
-    <!-- Esri Leaflet Geocoder -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/esri-leaflet-geocoder/dist/esri-leaflet-geocoder.css"
-    />
-    <script src="https://unpkg.com/esri-leaflet-geocoder"></script>
-
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   </head>
 
   <body>
+    <div class="input-group mb-3">
+      <button class="btn btn-outline-secondary search-btn" type="button" id="search-btn">
+        <img src="./assets/search-icon.svg" alt="search icon">
+      </button>
+      <input type="text" class="form-control" placeholder="Digite um local" aria-label="Recipient's username" aria-describedby="button-addon2" id="location-input" autocomplete="off">
+      <button type="button" class="btn btn-outline-info" id="add-location-btn">Adicionar local</button>
+    </div>
+    <ul class="list-group" id="search-items">
+    </ul>
     <div id="map"></div>
-    <script src="script.js" type="module"></script>
+    <ul class="list-group" id="added-items">
+    </ul>
+    <div class="finish-section">
+      <button id="finish-btn" type="button" class="btn btn-success" hidden>Finalizar
+    </button>
+    </div>
+
+    <script src="./scripts/script.js" type="module"></script>
+    <script src="./scripts/search.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
 </html>

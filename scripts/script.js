@@ -1,7 +1,6 @@
-import { data } from "./api.js";
+import { data } from "../api.js";
 
-var map = L.map("map").setView([0, 0], 3);
-var tiles = L.esri.basemapLayer("Streets").addTo(map);
+
 var markers = [];
 
 function distance(lat1, lat2, lon1, lon2) {
@@ -22,9 +21,7 @@ function distance(lat1, lat2, lon1, lon2) {
   return (c * r);
 }
 
-function createMarker(latitude, longitude) {
-  L.marker([latitude, longitude]).addTo(map);
-}
+
 
 function createHardMarker(latitude, longitude) {
   var centerIcon = L.icon({
@@ -67,25 +64,3 @@ function atualiza() {
     }).addTo(map);
   }
 }
-
-// create the geocoding control and add it to the map
-var searchControl = L.esri.Geocoding.geosearch({
-  providers: [
-    L.esri.Geocoding.arcgisOnlineProvider({
-      apikey: 'AAPKa226ff8bde974bad99f9582492514832sflZk2AdxoKznBIyhiskwB2wqy7Zx-rJEF_ujnGePGNKLXsGXkhufkjikP8bDIlX'
-    })
-  ]
-}).addTo(map);
-
-var results = L.layerGroup().addTo(map);
-
-searchControl.on("results", function (data) {
-  results.clearLayers();
-  for (var i = data.results.length - 1; i >= 0; i--) {
-    results.addLayer(L.marker(data.results[i].latlng));
-    markers.push(data.results[i].latlng);
-    console.log(markers);
-    atualiza();
-  }
-});
-
