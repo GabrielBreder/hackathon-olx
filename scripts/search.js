@@ -29,10 +29,14 @@ const ulSearchItems = document.getElementById("search-items");
 const locationInput = document.getElementById("location-input");
 let locationSelected = null;
 
-function selectedLocation(location, address) {
-  while (ulSearchItems.lastChild) {
-    ulSearchItems.removeChild(ulSearchItems.lastChild);
+function clearUlList(ul) {
+  while (ul.lastChild) {
+    ul.removeChild(ul.lastChild);
   }
+}
+
+function selectedLocation(location, address) {
+  clearUlList(ulSearchItems);
   locationInput.value = `${address[0]}, ${address[1]}`
   locationSelected = location;
 }
@@ -61,7 +65,7 @@ function addLocationToMap() {
     ulAddedItems.appendChild(div);
     locationInput.value = "";
     finishBtn.hidden = false;
-    console.log(finishBtn);
+    locationSelected = null;
   }
 }
 
@@ -81,6 +85,7 @@ function getLocationBySearch() {
   fetch(`https://api.tomtom.com/search/2/search/${locationInput.value}.json?key=IrmQGBC3GqAradGNxLK5cSIGOpyH57GJ`)
     .then(res => res.json())
     .then(locations => {
+      clearUlList(ulSearchItems);
       locations.results.forEach(location => {
         let address = SearchResultsParser.getAddressLines(location);
         let li = document.createElement("li");
