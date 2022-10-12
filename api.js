@@ -38,5 +38,53 @@ export const data = [
       "lat": -22.90182995745066,
       "lng": -43.12631491717245
     }
+  },
+  {
+    "name": "Centro",
+    "address": {
+      "description": "avenida das cores, 256",
+      "lat": -22.889720,
+      "lng": -43.120870
+    }
+  },
+  {
+    "name": "uff pv bloco h",
+    "address": {
+      "description": "avenida das cores, 256",
+      "lat": -22.9044705,
+      "lng": -43.13460380000001
+    }
+  },
+  {
+    "name": "mac",
+    "address": {
+      "description": "avenida das cores, 256",
+      "lat": -22.9078358,
+      "lng": -43.125867
+    }
+  },
+  {
+    "name": "solar do jambeiro",
+    "address": {
+      "description": "avenida das cores, 256",
+      "lat": -22.9032916,
+      "lng": -43.127933
+    }
+  },
+  {
+    "name": "plaza niteroi",
+    "address": {
+      "description": "avenida das cores, 256",
+      "lat": -22.8807073,
+      "lng": -43.1013526
+    }
+  },
+  {
+    "name": "AFTAE",
+    "address": {
+      "description": "avenida das cores, 256",
+      "lat": -22.8860396,
+      "lng": -43.1169507
+    }
   }
 ]

@@ -1,6 +1,5 @@
 import { data } from "../api.js";
 
-
 var markers = [];
 
 function distance(lat1, lat2, lon1, lon2) {
@@ -20,8 +19,6 @@ function distance(lat1, lat2, lon1, lon2) {
 
   return (c * r);
 }
-
-
 
 function createHardMarker(latitude, longitude) {
   var centerIcon = L.icon({
