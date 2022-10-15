@@ -1,0 +1,36 @@
+#map {
+  height: 700px;
+  width: 700px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: min-content;
+
+  margin: 1rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.price {
+  font-size: 1.25rem;
+  text-align: end;
+}
+
+.results-found {
+  color: #df1313;
+  font-weight: bold;
+  font-size: 1.15rem;
+  text-align: end;
+  margin-right: 2rem;
+}

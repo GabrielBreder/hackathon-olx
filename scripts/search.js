@@ -13,18 +13,17 @@ function getResultDistance(e) {
 var SearchResultsParser = { getAddressLines: getAddressLines, getResultDistance: getResultDistance };
 window.SearchResultsParser = window.SearchResultsParser || SearchResultsParser;
 
-var map = L.map("map").setView([0, 0], 3);
+var map = L.map("map").setView([-14.2400732, -53.1805017], 4);
 var tiles = L.esri.basemapLayer("Streets").addTo(map);
 
 let markers = [];
 
-function createMarker(latitude, longitude) {
-  var id;
-  if (markers.length < 1) id = 0;
-  else id = markers[markers.length - 1]._id + 1;
-
+function createMarker(latitude, longitude, id) {
   const myMarker = L.marker([latitude, longitude]);
+  map.setView([latitude, longitude], 15)
   myMarker._id = id;
+  myMarker._lat = latitude;
+  myMarker._lng = longitude;
   myMarker.addTo(map);
   return myMarker;
 }
@@ -37,6 +36,8 @@ function createHardMarker(latitude, longitude, id) {
   });
   const houseMarker = L.marker([latitude, longitude], { icon: centerIcon });
   houseMarker._id = id;
+  houseMarker._lat = latitude;
+  houseMarker._lng = longitude;
   houseMarker.addTo(map);
   return houseMarker;
 }
@@ -58,6 +59,7 @@ function selectedLocation(location, address) {
   locationSelected = location;
 }
 const finishBtn = document.getElementById("finish-btn");
+finishBtn.addEventListener('click', goToResultsPage)
 
 const addLocationBtn = document.getElementById("add-location-btn");
 addLocationBtn.addEventListener('click', () => { addLocationToMap() });
@@ -67,11 +69,10 @@ function addLocationToMap() {
   if (locationSelected) {
     const latitude = locationSelected.position.lat;
     const longitude = locationSelected.position.lon;
-    const marker = createMarker(latitude, longitude);
-
+    const marker = createMarker(latitude, longitude, locationSelected.id);
     markers.push(marker);
 
-    checkHousesDistances(latitude, longitude, marker._id);
+    checkHousesDistances(latitude, longitude, locationSelected.id);
 
     let div = document.createElement("div");
     div.innerHTML = `<li class="list-group-item list-group-item-light selected-locations">
@@ -90,7 +91,12 @@ function addLocationToMap() {
 
 function removeMarker(id) {
   markers.forEach(marker => {
-    if (marker._id == id) map.removeLayer(marker);
+    console.log("opa")
+    if (marker._id == id) {
+      map.removeLayer(marker)
+      let index = markers.indexOf(marker);
+      markers.splice(index)
+    };
   })
 
   housesMarkers.forEach(houseMarker => {
@@ -121,7 +127,7 @@ function getLocationBySearch() {
     .catch(err => console.log(err));
 }
 
-let housesMarkers = [];
+export let housesMarkers = [];
 
 function distance(lat1, lat2, lon1, lon2) {
   lon1 = lon1 * Math.PI / 180;
@@ -154,4 +160,16 @@ function checkHousesDistances(baseLat, baseLng, id) {
       housesMarkers.push(marker);
     };
   })
+}
+
+function goToResultsPage() {
+  let url = '/results.html'
+  let ids_url = '?id=';
+  markers.forEach(marker => {
+    console.log("aqui")
+    ids_url = ids_url.concat(`${marker._lat},${marker._lng}+`)
+  })
+  url = url.concat(ids_url);
+  url = url.slice(0, -1);
+  window.location.href = url;
 }
