@@ -5,6 +5,15 @@ html {
   margin: 0;
 }
 
+.section {
+  padding: 1rem 5rem;
+}
+
+.teste {
+  display: flex;
+  flex: 1;
+}
+
 #map {
   height: 600px;
 }
@@ -53,4 +62,23 @@ html {
   top: 86px;
   left: 60px;
   z-index: 99999;
+}
+
+@media screen and (max-width: 600px) {
+  .section {
+    padding: 0.5rem 1rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .teste {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .input-group .form-control.text-input {
+    width: 100%;
+  }
 }

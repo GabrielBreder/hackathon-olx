@@ -21,22 +21,26 @@
   </head>
 
   <body>
-    <div class="input-group mb-3">
-      <button class="btn btn-outline-secondary search-btn" type="button" id="search-btn">
-        <img src="./assets/search-icon.svg" alt="search icon">
+    <section class="section">
+      <div class="input-group mb-3">
+        <div class="teste">
+          <button class="btn btn-outline-secondary search-btn" type="button" id="search-btn">
+            <img src="./assets/search-icon.svg" alt="search icon">
+          </button>
+          <input type="text" class="form-control text-input" placeholder="Digite um local" aria-label="Recipient's username" aria-describedby="button-addon2" id="location-input" autocomplete="off">
+        </div>
+        <button type="button" class="btn btn-outline-info" id="add-location-btn">Adicionar local</button>
+      </div>
+      <ul class="list-group" id="search-items">
+      </ul>
+      <div id="map"></div>
+      <ul class="list-group" id="added-items">
+      </ul>
+      <div class="finish-section">
+        <button id="finish-btn" type="button" class="btn btn-success" hidden>Finalizar
       </button>
-      <input type="text" class="form-control" placeholder="Digite um local" aria-label="Recipient's username" aria-describedby="button-addon2" id="location-input" autocomplete="off">
-      <button type="button" class="btn btn-outline-info" id="add-location-btn">Adicionar local</button>
-    </div>
-    <ul class="list-group" id="search-items">
-    </ul>
-    <div id="map"></div>
-    <ul class="list-group" id="added-items">
-    </ul>
-    <div class="finish-section">
-      <button id="finish-btn" type="button" class="btn btn-success" hidden>Finalizar
-    </button>
-    </div>
+      </div>
+    </section>
 
     <script src="./scripts/script.js" type="module"></script>
     <script src="./scripts/search.js" type="module"></script>
