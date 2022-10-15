@@ -1,7 +1,7 @@
 export const data = [
   {
     "id": 1,
-    "name": "Ingá",
+    "name": "Casa",
     "img": "https://cdn.jhmrad.com/wp-content/uploads/modern-stucco-house-colors-deentight_546489.jpg",
     "price": "900,00",
     "address": {
@@ -12,7 +12,7 @@ export const data = [
   },
   {
     "id": 2,
-    "name": "Gragoatá",
+    "name": "Apartamento 2 quartos",
     "img": "https://cdn.jhmrad.com/wp-content/uploads/old-english-cottage-style-house-plans_377133.jpg",
     "price": "900,00",
     "address": {
@@ -23,7 +23,7 @@ export const data = [
   },
   {
     "id": 3,
-    "name": "São João",
+    "name": "Casa 3 cômodos",
     "img": "https://www.duntondestinations.com/wp-content/uploads/2019/04/DTH-October-2017.jpg",
     "price": "900,00",
     "address": {
@@ -34,7 +34,7 @@ export const data = [
   },
   {
     "id": 4,
-    "name": "Duque de Caxias",
+    "name": "Kitnet 1 quarto casal",
     "img": "https://cdn.jhmrad.com/wp-content/uploads/modern-stucco-house-colors-deentight_546489.jpg",
     "price": "900,00",
     "address": {
@@ -45,7 +45,7 @@ export const data = [
   },
   {
     "id": 5,
-    "name": "Ilha do Fundão",
+    "name": "Kitnet",
     "img": "https://cdn.jhmrad.com/wp-content/uploads/modern-stucco-house-colors-deentight_546489.jpg",
     "price": "900,00",
     "address": {
@@ -89,7 +89,7 @@ export const data = [
   },
   {
     "id": 9,
-    "name": "solar do jambeiro",
+    "name": "Apartamento 1 quarto",
     "img": "https://www.duntondestinations.com/wp-content/uploads/2019/04/DTH-October-2017.jpg",
     "price": "900,00",
     "address": {
