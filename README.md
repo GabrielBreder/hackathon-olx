@@ -17,7 +17,7 @@ Tecnologias usadas no projeto:
 
 ## Exemplos
 
-<img src="./assets/map.png" title="Map">
+<img src="./assets/map-v2.png" title="Map">
 
 
 
