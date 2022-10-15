@@ -19,7 +19,7 @@ Tecnologias usadas no projeto:
 ## Exemplos
 https://user-images.githubusercontent.com/62804393/194766440-77bd4140-e431-46c1-b3fc-2f03feea4076.mp4
 
-<img src="./assets/map.png" title="Map">
+<img src="./assets/map-v2.png" title="Map">
 
 
 
