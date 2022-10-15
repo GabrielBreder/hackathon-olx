@@ -13,7 +13,7 @@ function getResultDistance(e) {
 var SearchResultsParser = { getAddressLines: getAddressLines, getResultDistance: getResultDistance };
 window.SearchResultsParser = window.SearchResultsParser || SearchResultsParser;
 
-var map = L.map("map").setView([-14.2400732, -53.1805017], 4);
+var map = L.map("map", { dragging: false }).setView([-14.2400732, -53.1805017], 4);
 var tiles = L.esri.basemapLayer("Streets").addTo(map);
 
 let markers = [];

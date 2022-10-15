@@ -56,7 +56,7 @@ export const data = [
   },
   {
     "id": 6,
-    "name": "Centro",
+    "name": "Apartamento 1 quarto",
     "img": "https://cdn.jhmrad.com/wp-content/uploads/old-english-cottage-style-house-plans_377133.jpg",
     "price": "900,00",
     "address": {
@@ -67,7 +67,7 @@ export const data = [
   },
   {
     "id": 7,
-    "name": "uff pv bloco h",
+    "name": "Apartamento 3 quartos",
     "img": "https://cdn.jhmrad.com/wp-content/uploads/old-english-cottage-style-house-plans_377133.jpg",
     "price": "900,00",
     "address": {
@@ -78,7 +78,7 @@ export const data = [
   },
   {
     "id": 8,
-    "name": "mac",
+    "name": "Kitnet 1 quarto",
     "img": "https://www.duntondestinations.com/wp-content/uploads/2019/04/DTH-October-2017.jpg",
     "price": "900,00",
     "address": {
@@ -100,7 +100,7 @@ export const data = [
   },
   {
     "id": 10,
-    "name": "plaza niteroi",
+    "name": "Casa 2 andares",
     "img": "https://cdn.jhmrad.com/wp-content/uploads/old-english-cottage-style-house-plans_377133.jpg",
     "price": "900,00",
     "address": {
@@ -111,7 +111,7 @@ export const data = [
   },
   {
     "id": 11,
-    "name": "AFTAE",
+    "name": "Casa 3 quartos",
     "img": "https://cdn.jhmrad.com/wp-content/uploads/modern-stucco-house-colors-deentight_546489.jpg",
     "price": "900,00",
     "address": {

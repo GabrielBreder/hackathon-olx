@@ -38,7 +38,7 @@ function createMarker(latitude, longitude) {
   return myMarker;
 }
 
-function createHardMarker(latitude, longitude) {
+function createHardMarker(latitude, longitude, name) {
   var centerIcon = L.icon({
     iconUrl: './assets/marker.png',
     iconSize: [34, 34],
@@ -46,6 +46,7 @@ function createHardMarker(latitude, longitude) {
   });
   const houseMarker = L.marker([latitude, longitude], { icon: centerIcon });
   houseMarker.addTo(map);
+  houseMarker.bindPopup(name);
   return houseMarker;
 }
 
@@ -58,7 +59,7 @@ function checkHousesDistances(baseLat, baseLng) {
 
     let radiusDistance = distance(baseLat, latitude, baseLng, longitude);
     if (radiusDistance < maxDistance) {
-      let marker = createHardMarker(latitude, longitude);
+      let marker = createHardMarker(latitude, longitude, house.name, house.id);
       housesMarkers.push(marker);
 
 
